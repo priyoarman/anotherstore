@@ -45,6 +45,7 @@ function ProductDetails(){
           <button onClick={(e) => {
             e.preventDefault();
             addToCart(product);
+            alert("Added to Cart")
           }}
             className="mt-4 bg-blue-900 text-white py-2 px-4 rounded hover:bg-blue-600"
           >
