@@ -1,6 +1,9 @@
+/** This component renders the product details for each products on the app. */
+
 import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
+import { IoCart } from "react-icons/io5";
 
 function ProductDetails(){
   const { id } = useParams();
@@ -45,10 +48,13 @@ function ProductDetails(){
           <button onClick={(e) => {
             e.preventDefault();
             addToCart(product);
+            alert(`${product.title} added to cart`)
           }}
-            className="mt-4 bg-blue-900 text-white py-2 px-4 rounded hover:bg-blue-600"
+            className="mt-4 bg-blue-900 text-white py-2 px-4 rounded hover:bg-blue-600 cursor-pointer"
           >
-            🛒 Add to Cart
+            <div className="flex flex-row justify-center items-center">
+            <IoCart className="mr-2" /> Add to Cart
+          </div>
           </button>
         </div>
       </div>

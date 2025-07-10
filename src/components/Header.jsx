@@ -1,45 +1,61 @@
-import { Link } from "react-router-dom";
-import { useCart } from "../context/CartContext";
+/** This component renders the header for each page on the app. */
 
-function Header({ darkMode, onToggleDark }) {
+import { NavLink } from "react-router-dom";
+import { useCart } from "../context/CartContext";
+import { IoHome } from "react-icons/io5";
+import { RiDiscountPercentFill } from "react-icons/ri";
+import { MdWbSunny } from "react-icons/md";
+import { BsMoonFill } from "react-icons/bs";
+import { FaHeart } from "react-icons/fa";
+import { IoBagHandleSharp } from "react-icons/io5";
+
+function Header({ 
+  darkMode, 
+  onToggleDark, 
+ }) {
   const { cartItems } = useCart();
   const cartCount = cartItems.reduce((acc, item) => acc + item.quantity, 0);
 
   return (
-    <header className="bg-blue-950 text-white p-4 flex justify-between items-center">
+    <header className="bg-blue-100 text-blue-900 p-4 flex justify-between items-center">
       {/* Website Title */}
-      <Link
-        to="/"
-      >
-        <h1 className="text-2xl font-bold text-fuchsia-50 font-mono">Another Store</h1>
-      </Link>
+      <NavLink to="/">
+        <h2 className="text-2xl font-semibold">Another Store</h2>
+      </NavLink>
       {/* Navigation and Cart */}
-      <nav className="flex items-center space-x-6">
-        <a href="/" className="hover:scale-125">
-          Home
+      <nav className="flex items-center space-x-4">
+        <a href="/" className="text-xl hover:scale-125">
+          <IoHome />
         </a>
-        <a href="/products" className="hover:scale-125">
-          Sale!
+        <a href="/products" className="text-xl hover:scale-125">
+          <RiDiscountPercentFill />
         </a>
         <button
           onClick={onToggleDark}
-          className="h-8 mr-6 px-2 rounded bg-white dark:bg-gray-800"
+          className="h-8 rounded text-white dark:text-gray-800"
           aria-label="Toggle light/dark theme"
         >
-          {darkMode ? "☀️" : "🌙"}
+          {darkMode ? (
+            <MdWbSunny className="text-xl text-amber-500 hover:scale-125 cursor-pointer" />
+          ) : (
+            <BsMoonFill className="text-lg text-gray-500 hover:scale-125 cursor-pointer" />
+          )}
         </button>
-        <div className="relative">
-          <Link to="/cart">
-            <button className="bg-pink-800 py-1 px-3 rounded hover:bg-red-600 hover:scale-105">
-              View Cart
+        <div className="relative ml-4">
+          <button className="text-blue-900 pr-2 text-xl hover:scale-125 cursor-pointer">
+            <FaHeart />
+          </button>
+          <NavLink to="/cart">
+            <button className="text-rose-900 p-1 text-2xl hover:scale-125 cursor-pointer">
+              <IoBagHandleSharp />
             </button>
             {/* Cart Counter */}
             {cartCount > 0 && (
-              <span className="absolute -top-2 -right-2 bg-red-500 text-white rounded-full text-xs px-2">
+              <span className="absolute -top-2 -right-2 text-white bg-rose-900 font-semibold rounded-full text-xs px-1">
                 {cartCount}
               </span>
             )}
-          </Link>
+          </NavLink>
         </div>
       </nav>
     </header>

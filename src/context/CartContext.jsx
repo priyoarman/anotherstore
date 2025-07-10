@@ -1,3 +1,5 @@
+/** This component renders the context for the app. */
+
 import { createContext, useContext, useState, useEffect } from 'react';
 
 const CartContext = createContext();
@@ -13,12 +15,12 @@ export const CartProvider = ({ children }) => {
   // Load cart items from localStorage when the provider is mounted
 
   useEffect(() => {
-    console.log("CartProvider mounted. Attempting to load cart from localStorage...");
+    // console.log("CartProvider mounted. Attempting to load cart from localStorage...");
     const storedCart = localStorage.getItem('cartItems');
     if (storedCart) {
       try {
         const parsedItems = JSON.parse(storedCart);
-        console.log("Loaded cart from localStorage:", parsedItems);
+        // console.log("Loaded cart from localStorage:", parsedItems);
         setCartItems(parsedItems);
       } catch (error) {
         console.error("Failed to parse cartItems from localStorage", error);
@@ -29,7 +31,7 @@ export const CartProvider = ({ children }) => {
   // Save cart items to localStorage whenever they change
   
   useEffect(() => {
-    console.log("Cart changed. Saving cartItems to localStorage:", cartItems);
+    // console.log("Cart changed. Saving cartItems to localStorage:", cartItems);
     localStorage.setItem('cartItems', JSON.stringify(cartItems));
   }, [cartItems]);
 

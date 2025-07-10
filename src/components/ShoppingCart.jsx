@@ -1,3 +1,5 @@
+/** This component renders the shopping cart for the app. */
+
 import { useCart } from '../context/CartContext';
 import { Link } from 'react-router-dom';
 
@@ -6,7 +8,7 @@ const ShoppingCart = () => {
 
   // Calculate the total price
   const totalPrice = cartItems.reduce(
-    (acc, item) => acc + item.price * item.quantity,
+    (sum, item) => sum + item.price * item.quantity,
     0
   ).toFixed(2);
 
@@ -61,7 +63,7 @@ const ShoppingCart = () => {
       <div className="mt-6 flex justify-between items-center">
         <button
           onClick={clearCart}
-          className="bg-pink-800 text-amber-100 py-2 px-4 rounded hover:bg-red-600"
+          className="bg-pink-800 text-white py-2 px-4 rounded hover:bg-red-600"
         >
           Clear Cart
         </button>

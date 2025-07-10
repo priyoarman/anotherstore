@@ -2,14 +2,14 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useState, useEffect } from "react";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import Main from "./components/Main";
+import Main from "./components/HomePage";
 // import ProductCard from "./components/ProductCard";
 import ProductDetails from "./components/ProductDetails";
 import ShoppingCart from "./components/ShoppingCart";
 
 function App() {
   // State for managing search and category filters
-  const [searchTerm, setSearchTerm] = useState("");
+  const [searchInput, setSearchInput] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("");
   // State for the cart
   const [cart, setCart] = useState([]);
@@ -18,11 +18,6 @@ function App() {
   useEffect(() => {
     document.documentElement.classList.toggle("dark", darkMode);
   }, [darkMode]);
-
-  // Function to add a product to the cart
-  const handleAddToCart = (product) => {
-    setCart((prevCart) => [...prevCart, product]);
-  };
 
   return (
     <BrowserRouter>
@@ -40,8 +35,8 @@ function App() {
           path="/"
           element={
             <Main
-              searchTerm={searchTerm}
-              setSearchTerm={setSearchTerm}
+              searchInput={searchInput}
+              setSearchInput={setSearchInput}
               selectedCategory={selectedCategory}
               setSelectedCategory={setSelectedCategory}
               setCart={setCart}

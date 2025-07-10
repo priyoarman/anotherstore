@@ -1,5 +1,8 @@
+/** This component renders the product card for the home page on the app. */
+
 import { Link } from "react-router-dom";
 import { useCart } from "../context/CartContext";
+import { IoCart } from "react-icons/io5";
 
 function ProductCard({ product }) {
   const { addToCart } = useCart();
@@ -16,22 +19,26 @@ function ProductCard({ product }) {
 
         <div className="p-4 flex flex-col flex-grow">
           {/* Product Title */}
-          <h3 className="text-xl font-semibold text-blue-900 hover:text-pink-800 transition duration-300">
+          <h3 className="text-lg font-semibold text-blue-900 hover:text-pink-800 transition duration-300">
             {product.title}
           </h3>
 
           {/* Product Price */}
-          <p className="text-gray-600 mt-2 font-medium">${product.price}</p>
+          <p className="text-gray-600 mb-8">€ {product.price}</p>
         </div>
         {/* Add to Cart Button */}
         <button
           onClick={(e) => {
             e.preventDefault();
             addToCart(product);
+            alert(`${product.title} added to Cart`);
           }}
-          className="mt-4 bg-blue-900 text-white py-2 px-3 rounded hover:bg-blue-700 transition duration-300"
+          className="mt-4 bg-blue-900 text-white py-2 px-3 rounded hover:bg-blue-600 transition duration-300 cursor-pointer"
         >
-          🛒 Add to Cart
+          {" "}
+          <div className="flex flex-row justify-center items-center">
+            <IoCart className="mr-2" /> Add to Cart
+          </div>
         </button>
       </div>
     </Link>
