@@ -9,7 +9,7 @@ function ProductCard({ product }) {
 
   return (
     <Link to={`/products/${product.id}`}>
-      <div className="p-4 bg-blue-100 shadow-md rounded-lg flex flex-col items-center h-full hover:shadow-lg transition">
+      <div className="p-4 bg-orange-50 shadow-md rounded-lg flex flex-col items-center h-full hover:shadow-lg transition">
         {/* Product Image */}
         <img
           src={product.image}
@@ -19,12 +19,12 @@ function ProductCard({ product }) {
 
         <div className="p-4 flex flex-col flex-grow">
           {/* Product Title */}
-          <h3 className="text-lg font-semibold text-blue-900 hover:text-pink-800 transition duration-300">
+          <h3 className="text-lg font-semibold text-yellow-900 hover:text-pink-800 transition duration-300">
             {product.title}
           </h3>
 
           {/* Product Price */}
-          <p className="text-gray-600 mb-8">€ {product.price}</p>
+          <p className="text-yellow-700 font-semibold mb-8">€ {product.price}</p>
         </div>
         {/* Add to Cart Button */}
         <button
@@ -33,7 +33,7 @@ function ProductCard({ product }) {
             addToCart(product);
             alert(`${product.title} added to Cart`);
           }}
-          className="mt-4 bg-blue-900 text-white py-2 px-3 rounded hover:bg-blue-600 transition duration-300 cursor-pointer"
+          className="mt-4 bg-yellow-700 text-white py-2 px-3 rounded hover:bg-yellow-600 transition duration-300 cursor-pointer"
         >
           {" "}
           <div className="flex flex-row justify-center items-center">

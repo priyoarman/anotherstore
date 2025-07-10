@@ -50,13 +50,13 @@ function HomePage({
   });
 
   return (
-    <main className="p-6 bg-gray-100 min-h-screen auto-rows-fr">
+    <main className="p-6 min-h-screen auto-rows-fr">
       {/* Welcome Section */}
       <section className="text-center mb-8">
-        <h2 className="text-xl font-semibold text-blue-900">
+        <h2 className="text-xl font-semibold text-yellow-700">
           Welcome to Another Store!
         </h2>
-        <p className="mt-4 text-gray-500">
+        <p className="mt-4 text-yellow-600">
           Explore our wide range of products below.
         </p>
       </section>

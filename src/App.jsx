@@ -1,9 +1,9 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState } from "react";
+import "./index.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Main from "./components/HomePage";
-// import ProductCard from "./components/ProductCard";
 import ProductDetails from "./components/ProductDetails";
 import ShoppingCart from "./components/ShoppingCart";
 
@@ -13,19 +13,12 @@ function App() {
   const [selectedCategory, setSelectedCategory] = useState("");
   // State for the cart
   const [cart, setCart] = useState([]);
-  const [darkMode, setDarkMode] = useState(false);
-
-  useEffect(() => {
-    document.documentElement.classList.toggle("dark", darkMode);
-  }, [darkMode]);
 
   return (
     <BrowserRouter>
       {/* Header Component with Cart Count */}
       <Header
         cartCount={cart.length}
-        darkMode={darkMode}
-        onToggleDark={() => setDarkMode((m) => !m)}
       />
 
       {/* define app routes */}
