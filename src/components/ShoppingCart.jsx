@@ -53,7 +53,7 @@ const ShoppingCart = () => {
             </div>
             <button
               onClick={() => removeFromCart(item.id)}
-              className="ml-4 bg-orange-700 text-white py-1 px-3 rounded hover:bg-orange-600"
+              className="ml-4 bg-orange-700 text-white py-1 px-3 rounded hover:bg-orange-600 cursor-pointer"
             >
               Remove
             </button>

@@ -70,7 +70,7 @@ function HomePage({
       />
 
       {/* Product Listings */}
-      <section className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-6 gap-6">
+      <section className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 2xl:grid-cols-7 gap-6">
         {loading ? (
           <p className="text-center col-span-full">Loading products...</p>
         ) : (
