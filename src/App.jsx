@@ -6,6 +6,7 @@ import Footer from "./components/Footer";
 import Main from "./components/HomePage";
 import ProductDetails from "./components/ProductDetails";
 import ShoppingCart from "./components/ShoppingCart";
+import Sale from "./components/Sale";
 
 function App() {
   // State for managing search and category filters
@@ -39,6 +40,7 @@ function App() {
 
         {/* product details page */}
         <Route path="/products/:id" element={<ProductDetails />} />
+        <Route path="/sale" element={<Sale />} />
         <Route path="/cart" element={<ShoppingCart />} />
       </Routes>
       <Footer />

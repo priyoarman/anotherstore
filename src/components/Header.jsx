@@ -38,7 +38,7 @@ function Header() {
         <a href="/" className="text-xl hover:scale-125">
           <IoHome />
         </a>
-        <Link to={"/sale"} className="text-xl hover:scale-125">
+        <Link to={"./Sale"} className="text-xl hover:scale-125">
           <RiDiscountPercentFill />
         </Link>
         <button

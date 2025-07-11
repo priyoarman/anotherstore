@@ -25,7 +25,7 @@ function ProductDetails(){
   }, [id]);
 
   if (loading) {
-    return <p className="text-center col-span-full">Loading product details...</p>;
+    return <p className="text-center text-md font-semibold text-yellow-700 col-span-full animate-pulse">Loading product details...</p>;
   }
 
   if (!product) {
