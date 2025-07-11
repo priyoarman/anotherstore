@@ -13,7 +13,7 @@ function Header() {
   const cartCount = cartItems.reduce((acc, item) => acc + item.quantity, 0);
 
   const [theme, setTheme] = useState(() => {
-    return localStorage.getItem("theme") || "bg-gray-900";
+    return localStorage.getItem("theme") || "bg-gray-950";
   });
   const [label, setLabel] = useState("🌙");
 
