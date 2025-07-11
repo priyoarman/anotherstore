@@ -5,7 +5,7 @@ import React from "react";
 function Footer() {
   return (
     <footer className="text-center py-4 mt-8">
-      <p className="text-yellow-900">
+      <p className="text-yellow-800">
         © {new Date().getFullYear()} Another Store
       </p>
     </footer>

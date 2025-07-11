@@ -24,7 +24,7 @@ function ProductCard({ product }) {
           </h3>
 
           {/* Product Price */}
-          <p className="text-yellow-700 font-semibold mb-8">€ {product.price}</p>
+          <p className="text-yellow-700 font-semibold mb-8">€{product.price}</p>
         </div>
         {/* Add to Cart Button */}
         <button

@@ -38,7 +38,7 @@ const ShoppingCart = () => {
             />
             <div className="ml-4 flex-grow">
               <h2 className="text-lg text-yellow-700 font-bold">{item.title}</h2>
-              <p className="text-yellow-700">${item.price} x {item.quantity}</p>
+              <p className="text-yellow-700">€{item.price} x {item.quantity}</p>
             </div>
             <div>
               <input
@@ -67,10 +67,10 @@ const ShoppingCart = () => {
         >
           Clear Cart
         </button>
-        <div className="text-xl text-yellow-700 font-bold">Total: ${totalPrice}</div>
+        <div className="text-xl text-yellow-600 font-bold">Total: €{totalPrice}</div>
       </div>
       <div className="mt-4">
-        <Link to="/" className="text-yellow-700 font-semibold hover:underline">
+        <Link to="/" className="text-yellow-600 font-semibold hover:underline">
           Continue shopping
         </Link>
       </div>
