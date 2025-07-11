@@ -1,12 +1,10 @@
 /** This component renders the header for each page on the app. */
 
 import { useState, useEffect } from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { useCart } from "../context/CartContext";
 import { IoHome } from "react-icons/io5";
 import { RiDiscountPercentFill } from "react-icons/ri";
-import { MdWbSunny } from "react-icons/md";
-import { BsMoonFill } from "react-icons/bs";
 import { FaHeart } from "react-icons/fa";
 import { IoBagHandleSharp } from "react-icons/io5";
 
@@ -40,11 +38,11 @@ function Header() {
         <a href="/" className="text-xl hover:scale-125">
           <IoHome />
         </a>
-        <a href="/sale" className="text-xl hover:scale-125">
+        <Link to={"/sale"} className="text-xl hover:scale-125">
           <RiDiscountPercentFill />
-        </a>
+        </Link>
         <button
-          className="h-8 rounded text-xl font-bold"
+          className="h-8 rounded text-xl font-bold hover:scale-125 cursor-pointer"
           aria-label="Toggle light/dark theme" onClick={toggleTheme}
         >{label}
         </button>

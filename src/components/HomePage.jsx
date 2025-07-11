@@ -30,7 +30,7 @@ function HomePage({
     }
 
     fetchProducts();
-  }, []); // Empty dependency array ensures the fetch runs once
+  }, []); // Empty dependency array to ensure the fetch runs once
 
   // Function to add a product to the cart
   const handleAddToCart = (product) => {
@@ -72,7 +72,9 @@ function HomePage({
       {/* Product Listings */}
       <section className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 2xl:grid-cols-7 gap-6">
         {loading ? (
-          <p className="text-center col-span-full">Loading products...</p>
+          <p className="text-center text-md font-semibold text-yellow-700 col-span-full animate-pulse">
+            Loading products...
+          </p>
         ) : (
           filteredProducts.map((product) => (
             <ProductCard
