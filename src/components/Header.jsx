@@ -31,7 +31,7 @@ function Header() {
     <header className="text-yellow-600 p-4 flex justify-between items-center">
       {/* Website Title */}
       <NavLink to="/">
-        <h2 className="text-2xl font-extrabold">Another Store</h2>
+        <h2 className="text-2xl font-extrabold">Another Shop</h2>
       </NavLink>
       {/* Navigation and Cart */}
       <nav className="flex items-center space-x-4">

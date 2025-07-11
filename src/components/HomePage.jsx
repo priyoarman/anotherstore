@@ -54,7 +54,7 @@ function HomePage({
       {/* Welcome Section */}
       <section className="text-center mb-8">
         <h2 className="text-xl font-semibold text-yellow-600">
-          Welcome to Another Store!
+          Welcome to Another Shop!
         </h2>
         <p className="mt-4 text-yellow-700">
           Explore our wide range of products below.
